@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-1 col-10 text-center">
+      <h1>Modelo para integrar com uma API com angular</h1>
+    </div>
+    <div class="offset-1 col-10">
+      <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel title="Response Delayed">
+          <ng-template ngbPanelContent>
+            <code *ngIf="!loading">
+              {{delay}}
+            </code>
+            <div *ngIf="loading">Carregando...</div>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="List">
+          <ng-template ngbPanelContent>
+            <code>
+              {{users}}
+            </code>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Get Single">
+          <ng-template ngbPanelContent>
+            <code>
+              {{user}}
+            </code>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Forms in general">
+          <ng-template ngbPanelContent>
+            <div class="container">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" [(ngModel)]="login.email" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" [(ngModel)]="login.password" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <button (click)="logIn()" class="btn btn-primary">Submit</button>
+              </form>
+              <code>
+                {{loginResponse}}
+              </code>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </div>
+</div>
