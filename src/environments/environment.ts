@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://reqres.in/api/'
+  apiUrl: 'https://reqres.in/api/',
+  tokenWhitelistedDomains: [ new RegExp('localhost:8080') ],
+  tokenBlacklistedRoutes: [ new RegExp('\/oauth\/token') ]
 };
 
 /*

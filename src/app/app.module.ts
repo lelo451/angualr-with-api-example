@@ -7,6 +7,8 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
+import {SecurityModule} from './security/security.module';
+import {AppRoutingModule} from './app.routing';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     NgbModule.forRoot(),
-    FormsModule
+    FormsModule,
+    SecurityModule,
+    AppRoutingModule
   ],
   providers: [
     ModelService
